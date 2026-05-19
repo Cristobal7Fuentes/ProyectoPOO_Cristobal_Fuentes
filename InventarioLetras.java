@@ -66,8 +66,13 @@ public class InventarioLetras {
     }
     public int get(char letra){
         if(!Character.isLetter(letra) throw new IllegalArgumentException("no es un letra: " + letra);
-
+        char lower = Character.toLowerCase(letra);
+        if (lower < 'a' || lower > 'z') throw new IllegalArgumentException("letra fuera de a-z: " + letra);
+        return counts[lower - 'a'];
     }
+     public void set(char letra, int valor){
+
+     }
 
 
 
